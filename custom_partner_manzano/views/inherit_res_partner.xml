@@ -15,7 +15,7 @@
                         <field name="floor" style="max-width: 24%%" placeholder="Floor..."/>
                         <field name="letter" style="max-width: 24%%" placeholder="Letter..."/>
                         <field name="number_door" style="max-width: 24%%" placeholder="Door Number..."/>
-                        <span attrs="{'invisible': [('number_door','=', False)]}" class="fa fa-bell" style="vertical-align: -webkit-baseline-middle;"/>
+                        <span attrs="{'invisible': [('number_door','=', False)]}" class="fa fa-bell"/>
                     </div>
                 </field>
                 <field name="street2" position="attributes">
