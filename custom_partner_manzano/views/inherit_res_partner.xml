@@ -11,11 +11,9 @@
             <field name="street" position="after">
                 <div class="o_form_input">
                     <field name="doorway" style="max-width: 18%%" placeholder="Doorway Interior..."/>
-                    <label attrs="{'invisible': [('floor','=', False)]}" string="-"
+                    <label attrs="{'invisible': [('doorway','=', False)]}" string="-"
                            class="oe_inline" style="margin-left: 5px;"/>
                     <field name="floor" style="max-width: 18%%" placeholder="Floor..."/>
-                    <label attrs="{'invisible': [('letter','=', False)]}" string="-"
-                           class="oe_inline" style="margin-left: 5px;"/>
                     <field name="letter" style="max-width: 18%%" placeholder="Letter..."/>
                     <label attrs="{'invisible': [('number_door','=', False)]}" string="-"
                            class="oe_inline" style="margin-left: 5px;"/>
