@@ -12,50 +12,50 @@
                 </p>
 
                 <div class="col-xs-12" id="informations">
-                    <div id="column_left" class="col-xs-6">
+                    <div id="column_left" class="col-xs-7">
                         <div class="row">
-                            <div class="col-xs-4 text-right">
+                            <div class="col-xs-3 text-right">
                                 <strong>Number:</strong>
                             </div>
-                            <div class="col-xs-8 text-left">
+                            <div class="col-xs-9 text-left">
                                 <span t-field="doc.name"/>
                             </div>
                         </div>
 
                         <div t-if="doc.date_order" class="row">
-                            <div class="col-xs-4 text-right">
+                            <div class="col-xs-3 text-right">
                                 <strong>Date:</strong>
                             </div>
-                            <div class="col-xs-8 text-left">
+                            <div class="col-xs-9 text-left">
                                 <span t-field="doc.date_order"/>
                             </div>
                         </div>
 
                         <div t-if="doc.client_order_ref" class="row">
-                            <div class="col-xs-4 text-right">
+                            <div class="col-xs-3 text-right">
                                 <strong>Your Reference:</strong>
                             </div>
-                            <div class="col-xs-8 text-left">
+                            <div class="col-xs-9 text-left">
                                 <span t-field="doc.client_order_ref"/>
                             </div>
                         </div>
                     </div>
 
-                    <div id="column_right" class="col-xs-6">
+                    <div id="column_right" class="col-xs-5">
                         <div t-if="doc.user_id.name" class="row">
-                            <div class="col-xs-5 text-right">
+                            <div class="col-xs-3 text-right">
                                 <strong>Salesperson:</strong>
                             </div>
-                            <div class="col-xs-7 text-left">
+                            <div class="col-xs-9 text-left">
                                 <span t-field="doc.user_id"/>
                             </div>
                         </div>
 
                         <div t-if="doc.user_id.phone or doc.user_id.mobile" class="row">
-                            <div class="col-xs-5 text-right">
+                            <div class="col-xs-3 text-right">
                                 <strong>Phone:</strong>
                             </div>
-                            <div class="col-xs-7 text-left">
+                            <div class="col-xs-9 text-left">
                                 <div t-if="doc.user_id.phone">
                                     <span class="fa fa-phone"/>
                                     <span t-field="doc.user_id.phone"/>
@@ -69,10 +69,10 @@
                         </div>
 
                         <div t-if="doc.user_id.email" class="row">
-                            <div class="col-xs-5 text-right">
+                            <div class="col-xs-3 text-right">
                                 <strong>E-mail:</strong>
                             </div>
-                            <div class="col-xs-7 text-left">
+                            <div class="col-xs-9 text-left">
                                 <span t-field="doc.user_id.email"/>
                             </div>
                         </div>
@@ -80,39 +80,69 @@
                 </div>
 
                 <div t-if="doc.partner_id == doc.partner_invoice_id == doc.partner_shipping_id"
-                     class="col-xs-12 mt8" id="informations_partner">
-                    <div class="col-xs-12">
-                        <!--<strong class="">Contact information:</strong>-->
-                        <p class="name" t-field="doc.partner_id.name"/>
-                        <p class="email" t-field="doc.partner_id.email"/>
+                     class="col-xs-12" id="informations_partner">
+                    <div id="column_left" class="col-xs-7">
+                        <div class="row">
+                            <div class="col-xs-3 text-right">
+                                <strong>Partner:</strong>
+                            </div>
+                            <div class="col-xs-9 text-left">
+                                <p class="name" t-field="doc.partner_id.name"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3 text-right" t-if="doc.partner_id.vat">
+                                <strong>VAT:</strong>
+                            </div>
+                            <div class="col-xs-9 text-left">
+                                <span t-field="doc.partner_id.vat"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-3 text-right">
+                                <strong>Address:</strong>
+                            </div>
+                            <div class="col-xs-9 text-left">
+                                <div>
+                                    <span t-field="doc.partner_id.street"/>
+                                    <span>-</span>
+                                    <span t-field="doc.partner_id.doorway"/>
+                                    <span t-if="doc.partner_id.doorway">-</span>
+                                    <span t-field="doc.partner_id.floor"/>
+                                    <span t-field="doc.partner_id.letter"/>
+                                    <span t-if="doc.partner_id.number_door">-</span>
+                                    <span t-field="doc.partner_id.number_door"/>
+                                    <span t-if="doc.partner_id.number_door" class="fa fa-bell"/>
+                                </div>
+                                <div>
+                                    <span t-field="doc.partner_id.zip"/>
+                                    <span t-field="doc.partner_id.city"/>
+                                    <span t-field="doc.partner_id.state_id"/>
+                                    <span t-field="doc.partner_id.country_id"/>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="col-xs-7">
-                        <!--<div t-field="doc.partner_id"-->
-                        <!--t-field-options='{"widget": "contact", "fields": ["address"], "no_marker": true}'/>-->
-                        <div>
-                            <span t-field="doc.partner_id.street"/>
-                            <span t-field="doc.partner_id.doorway"/>
-                            <span t-field="doc.partner_id.floor"/>
-                            <span t-field="doc.partner_id.letter"/>
-                            <span t-field="doc.partner_id.number_door"/>
-                            <span t-if="doc.partner_id.number_door" class="fa fa-bell"/>
+                    <div id="column_right" class="col-xs-5">
+                        <div class="row">
+                            <div class="col-xs-3 text-right">
+                                <strong>Phone:</strong>
+                            </div>
+                            <div class="col-xs-9 text-left">
+                                <div t-field="doc.partner_id"
+                                     t-field-options='{"widget": "contact", "fields": ["phone", "mobile", "mobile2", "fax"], "no_marker": true, "phone_icons": true}'/>
+                            </div>
                         </div>
-                        <div>
-                            <span t-field="doc.partner_id.zip"/>
-                            <span t-field="doc.partner_id.city"/>
-                            <span t-field="doc.partner_id.state_id"/>
-                            <span t-field="doc.partner_id.country_id"/>
+                        <div class="row">
+                            <div class="col-xs-3 text-right">
+                                <strong>E-mail:</strong>
+                            </div>
+                            <div class="col-xs-9 text-left">
+                                <p class="email" t-field="doc.partner_id.email"/>
+                            </div>
                         </div>
-
-                    </div>
-                    <div class="col-xs-5 text-right">
-                        <div t-field="doc.partner_id"
-                             t-field-options='{"widget": "contact", "fields": ["phone", "mobile", "mobile2", "fax"], "no_marker": true, "phone_icons": true}'/>
-                        <p t-if="doc.partner_id.vat">
-                            <strong>VAT:</strong>
-                            <span t-field="doc.partner_id.vat"/>
-                        </p>
                     </div>
                 </div>
 
