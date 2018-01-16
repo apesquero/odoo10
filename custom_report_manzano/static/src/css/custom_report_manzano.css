@@ -26,15 +26,15 @@
 }
 
 #column_left {
-    padding: 0px;
+    padding: 0 10px 0 0;
 }
 
-column_middle {
-    padding: 0px;
+#column_middle {
+    padding: 0 10px 0 0;
 }
 
 #column_right {
-    padding: 0px;
+    padding: 0 10px 0 0;
 }
 
 .name {
