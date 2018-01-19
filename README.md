@@ -1,5 +1,8 @@
 # odoo10
 
+account_cancel
+
+
 #Modulos a instalar OCA
 
 #base_location;
