@@ -4,15 +4,17 @@ account_cancel
 
 
 #Modulos a instalar OCA
+<ul>
 
-#base_location;
-#bale_location_geonames_import;
-#l10n_es_partner;
-#l10n_es_toponyms;
-#procurement_purchase_no_grouping;
-#purchase_discount;
-#sale_order_type;
+<li>base_location</li>
+<li>bale_location_geonames_import</li>
+<li>l10n_es_partner</li>
+<li>l10n_es_toponyms</li>
+<li>procurement_purchase_no_grouping</li>
+<li>purchase_discount</li>
+<li>sale_order_type</li>
 
+</ul>
 
 #Modulos a instalar externos
 
