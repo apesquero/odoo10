@@ -56,3 +56,7 @@
     font-size: large;
     color: #31708f;
 }
+
+.subfooter {
+    page-break-inside: avoid;
+}

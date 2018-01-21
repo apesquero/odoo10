@@ -11,7 +11,7 @@
                     <span t-if="doc.state in ['draft','sent']">QUOTATION</span>
                 </p>
 
-                <div id="informations" class="col-xs-12">
+                <div id="informations" class="col-xs-12" style="display: table-header-group;">
                     <div id="column_left" class="col-xs-7">
                         <div class="row">
                             <div class="col-xs-3 text-right">
@@ -332,88 +332,92 @@
                     </t>
                 </t>
 
-                <div class="row" name="total">
-                    <div class="col-xs-4 pull-left">
-                        <table class="table table-condensed">
-                            <tr class="border-black">
-                                <td>
-                                    <strong>Way to Pay</strong>
-                                </td>
-                                <td class="text-right">
-                                    <span></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <strong class="signal" t-if="doc.state not in ['draft','sent']">Signal Order
-                                    </strong>
-                                    <strong class="signal" t-if="doc.state in ['draft','sent']">Signal Quotation
-                                    </strong>
-                                </td>
-                                <td class="text-right">
-                                    <span class="signal"
-                                          t-field="doc.payment_signal"
-                                          t-field-options='{"widget": "monetary", "display_currency": "doc.pricelist_id.currency_id"}'/>
-                                </td>
-                            </tr>
-                            <tr class="border-black">
-                                <td>
-                                    <span>Rest to pay</span>
-                                </td>
-                                <td class="text-right">
-                                    <span t-field="doc.rest_pay"
-                                          t-field-options='{"widget": "monetary", "display_currency": "doc.pricelist_id.currency_id"}'/>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-
-                    <div class="col-xs-6 pull-right">
-                        <table class="table table-condensed">
-                            <tr class="border-black">
-                                <td>
-                                    <strong>Total Without Taxes</strong>
-                                </td>
-                                <td class="text-right">
-                                    <span t-field="doc.amount_untaxed"
-                                          t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
-                                </td>
-                            </tr>
-                            <t t-foreach="doc._get_tax_amount_by_group()" t-as="amount_by_group">
-                                <tr>
+                <div class="subfooter">
+                    <div class="row" name="total">
+                        <div class="col-xs-4 pull-left">
+                            <table class="table table-condensed">
+                                <tr class="border-black">
                                     <td>
-                                        <span t-esc="amount_by_group[0] or 'Taxes'"/>
+                                        <strong>Way to Pay</strong>
                                     </td>
                                     <td class="text-right">
-                                        <span t-esc="amount_by_group[1]"
+                                        <span></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong class="signal" t-if="doc.state not in ['draft','sent']">Signal Order
+                                        </strong>
+                                        <strong class="signal" t-if="doc.state in ['draft','sent']">Signal Quotation
+                                        </strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="signal"
+                                              t-field="doc.payment_signal"
+                                              t-field-options='{"widget": "monetary", "display_currency": "doc.pricelist_id.currency_id"}'/>
+                                    </td>
+                                </tr>
+                                <tr class="border-black">
+                                    <td>
+                                        <span>Rest to pay</span>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="doc.rest_pay"
+                                              t-field-options='{"widget": "monetary", "display_currency": "doc.pricelist_id.currency_id"}'/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="col-xs-7 pull-right">
+                            <table class="table table-condensed">
+                                <tr class="border-black">
+                                    <td>
+                                        <strong>Total Without Taxes</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="doc.amount_untaxed"
                                               t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
                                     </td>
                                 </tr>
-                            </t>
-                            <tr class="border-black">
-                                <td>
-                                    <strong class="amount_total"
-                                            t-if="doc.state not in ['draft','sent']">TOTAL ORDER(TAX INCLUDED)</strong>
-                                    <strong class="amount_total"
-                                            t-if="doc.state in ['draft','sent']">TOTAL QUOTATION(TAX INCLUDED)</strong>
-                                </td>
-                                <td class="text-right">
-                                    <span class="amount_total" t-field="doc.amount_total"
-                                          t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
-                                </td>
-                            </tr>
-                        </table>
+                                <t t-foreach="doc._get_tax_amount_by_group()" t-as="amount_by_group">
+                                    <tr>
+                                        <td>
+                                            <span t-esc="amount_by_group[0] or 'Taxes'"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-esc="amount_by_group[1]"
+                                                  t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
+                                        </td>
+                                    </tr>
+                                </t>
+                                <tr class="border-black">
+                                    <td>
+                                        <strong class="amount_total"
+                                                t-if="doc.state not in ['draft','sent']">TOTAL ORDER (TAX INCLUDED)
+                                        </strong>
+                                        <strong class="amount_total"
+                                                t-if="doc.state in ['draft','sent']">TOTAL QUOTATION (TAX INCLUDED)
+                                        </strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span class="amount_total" t-field="doc.amount_total"
+                                              t-options='{"widget": "monetary", "display_currency": doc.pricelist_id.currency_id}'/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                </div>
 
-                <p t-field="doc.note"/>
-                <p t-if="doc.payment_term_id.note">
-                    <span t-field="doc.payment_term_id.note"/>
-                </p>
-                <p id="fiscal_position_remark" t-if="doc.fiscal_position_id and doc.fiscal_position_id.note">
-                    <strong>Fiscal Position Remark:</strong>
-                    <span t-field="doc.fiscal_position_id.note"/>
-                </p>
+                    <p t-field="doc.note"/>
+                    <p t-if="doc.payment_term_id.note">
+                        <span t-field="doc.payment_term_id.note"/>
+                    </p>
+                    <p id="fiscal_position_remark" t-if="doc.fiscal_position_id and doc.fiscal_position_id.note">
+                        <strong>Fiscal Position Remark:</strong>
+                        <span t-field="doc.fiscal_position_id.note"/>
+                    </p>
+                </div>
 
                 <div class="oe_structure"/>
             </div>
