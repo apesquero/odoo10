@@ -8,6 +8,6 @@
              'views/inherit_res_company.xml',
              'views/inherit_sale_order.xml', ],
     'category': 'Sales',
-    'depends': ['account', 'sale'],
+    'depends': ['account', 'sale', 'acepted_order'],
     'application': True,
 }

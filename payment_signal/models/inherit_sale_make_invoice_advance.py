@@ -8,7 +8,7 @@ class SaleAdvancePaymentInv(models.TransientModel):
     @api.model
     def _get_advance_payment_method(self):
         state_obj = self.env['sale.order'].browse(self._context.get('active_ids')).state
-        if state_obj in ('draft', 'sent'):
+        if state_obj in ('draft', 'sent', 'acepted'):
             return 'fixed'
         elif state_obj in ('sale', 'done'):
             return 'all'
