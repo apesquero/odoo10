@@ -13,9 +13,15 @@
 <li>l10n_es_partner</li>
 <li>l10n_es_toponyms</li>
 <li>procurement_purchase_no_grouping</li>
-<li>purchase_discount</li>
 <li>product_supplierinfo_discount - actualizado</li>
+<li>product_variant_configurator</li>
+<li>purchase_discount</li>
+<li>purchase_variant_configurator</li>
+<li>purchase_variant_configurator_on_confirm</li>
 <li>sale_order_type</li>
+<li>sale_stock_variant_configurator</li>
+<li>sale_variant_configurator</li>
+<li>web_sheet_full_width</li>
 </ul>
 
 #Modulos a instalar propios
@@ -24,6 +30,7 @@
 <li>custom_report_manzano</li>
 <li>custom_sale_order_type</li>
 <li>payment_signal</li>
+<li>acepted_order</li>
 </ul>
 
 #Modulos a instalar externos
