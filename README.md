@@ -26,11 +26,13 @@
 
 #Modulos a instalar propios
 <ul>
+<li>acepted_order</li>
 <li>custom_partner_manzano</li>
+<li>custom_purchase_order</li>
 <li>custom_report_manzano</li>
+<li>custom_sale_order</li>
 <li>custom_sale_order_type</li>
 <li>payment_signal</li>
-<li>acepted_order</li>
 </ul>
 
 #Modulos a instalar externos
