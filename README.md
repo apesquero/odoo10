@@ -17,7 +17,7 @@
 <li>product_variant_configurator</li>
 <li>purchase_discount</li>
 <li>purchase_variant_configurator</li>
-<li>purchase_variant_configurator_on_confirm</li>
+<li>purchase_variant_configurator_on_confirm - no instalar, falla en product_uom</li>
 <li>sale_order_type</li>
 <li>sale_stock_variant_configurator</li>
 <li>sale_variant_configurator</li>
