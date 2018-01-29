@@ -13,11 +13,11 @@
             </xpath>
 
 			<xpath expr="//form//label[@for='price']" position="attributes">
-				<attribute name="attrs">{'invisible':['|',('price_type','=','table_1d'),('price_type','=','table_2d')]}</attribute>
+				<attribute name="attrs">{'invisible':[('price_type', 'not in', ['standard', 'area'])]}</attribute>
             </xpath>
 
 			<xpath expr="//form//field[@name='price']" position="attributes">
-				<attribute name="attrs">{'invisible':['|',('price_type','=','table_1d'),('price_type','=','table_2d')]}</attribute>
+				<attribute name="attrs">{'invisible':[('price_type', 'not in', ['standard', 'area'])]}</attribute>
             </xpath>
 
 			<xpath expr="//form/group" position="after">
