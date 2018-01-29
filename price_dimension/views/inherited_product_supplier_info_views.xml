@@ -11,7 +11,15 @@
 	                <button string="Variant Prices" type="object" name="action_open_value_extras"/>
 	            </header>
             </xpath>
-        
+
+			<xpath expr="//form//label[@for='price']" position="attributes">
+				<attribute name="attrs">{'invisible':['|',('price_type','=','table_1d'),('price_type','=','table_2d')]}</attribute>
+            </xpath>
+
+			<xpath expr="//form//field[@name='price']" position="attributes">
+				<attribute name="attrs">{'invisible':['|',('price_type','=','table_1d'),('price_type','=','table_2d')]}</attribute>
+            </xpath>
+
 			<xpath expr="//form/group" position="after">
                 <group name="supplier_price_type_g" string="Supplier Price Type">
                     <label for="price_type"/>
@@ -33,7 +41,7 @@
 	                </group>
                 </group>
                 <div attrs="{'invisible':[('price_type', 'not in', ['table_1d','table_2d'])]}">
-                	<field name="prices_table" widget="mdtable" mode="price_type" />
+                	<field class="col-md-12" name="prices_table" widget="mdtable" mode="price_type" />
                 	<button name="%(launch_wizard_mdtable_supplier_import_data)d" string="Import Records" type="action" class="oe_highlight pull-right" />
             	</div>
             </xpath>
