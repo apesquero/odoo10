@@ -10,10 +10,10 @@
         </field>
     </record>
 
-    <act_window id="action_buttom_cancel"
-                name="Cancel"
-                res_model="purchase.order"
-                src_model="purchase.order"
-                view_mode="tree"
-                multi="True"/>
+    <!--<act_window id="action_buttom_cancel"-->
+                <!--name="Cancel"-->
+                <!--res_model="purchase.order"-->
+                <!--src_model="purchase.order"-->
+                <!--view_mode="tree"-->
+                <!--multi="True"/>-->
 </odoo>
