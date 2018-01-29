@@ -60,7 +60,7 @@
                                 <field name="width_uom"  attrs="{'required':[('sale_price_type', 'in', ['table_1d','table_2d','area'])]}"/>
                             </group>
                         </group>
-                        <field name="sale_prices_table" widget="mdtable" mode="sale_price_type" />
+                        <field class="col-md-12" name="sale_prices_table" widget="mdtable" mode="sale_price_type" />
                         <button name="%(launch_wizard_mdtable_sale_import_data)d" string="Import Records" type="action" class="oe_highlight pull-right" />
                     </div>
                 </page>

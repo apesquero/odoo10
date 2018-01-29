@@ -22,7 +22,6 @@
 
 from odoo import models, fields
 
-
 class stock_move(models.Model):
     _inherit = 'stock.move'
 
