@@ -3,7 +3,6 @@
 #Modulos a instalar ODOO
 <ul>
 <li>account_cancel</li>
-<li>web_sheet_full_width</li>
 </ul>
 
 
