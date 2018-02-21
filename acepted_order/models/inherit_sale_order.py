@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
-import math
-
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
@@ -31,5 +28,6 @@ class SaleOrder(models.Model):
 
     @api.multi
     def action_cancel(self):
+        res = super(SaleOrder, self).action_cancel()
         self.update({'acepted': False})
-        return self.write({'state': 'cancel'})
+        return res
