@@ -3,6 +3,7 @@
 #Modulos a instalar ODOO
 <ul>
 <li>account_cancel</li>
+<li>web_sheet_full_width</li>
 </ul>
 
 
@@ -22,6 +23,7 @@
 <li>sale_stock_variant_configurator</li>
 <li>sale_variant_configurator</li>
 <li>web_sheet_full_width</li>
+<li>web_tree_image</li>
 </ul>
 
 #Modulos a instalar propios
@@ -33,6 +35,7 @@
 <li>custom_sale_order</li>
 <li>custom_sale_order_type</li>
 <li>payment_signal</li>
+<li>product_attribute_value_image</li>
 </ul>
 
 #Modulos a instalar externos
