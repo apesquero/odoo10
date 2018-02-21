@@ -30,9 +30,11 @@
                         <span t-field="doc.company_id.vat"/>
                     </li>
                 </ul>
+
                 <t t-if="doc.company_id.custom_footer">
                     <span t-raw="doc.company_id.rml_footer"/>
                 </t>
+
                 <ul class="list-inline">
                     <li>Page:</li>
                     <li>
